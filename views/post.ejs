@@ -1,0 +1,20 @@
+<div class="post-container">
+  <main class="main post">
+    <h1><%= data.title %></h1>
+
+    <p class="post-date">
+      Posted: <%= data.createdAt.toDateString() %> <!-- Showcase when post was created -->
+    </p>
+
+    <!-- If date got updated after the created date > present the updated time -->
+    <% if (data.updatedAt && data.updatedAt.getTime() !== data.createdAt.getTime()) { %>
+      <p class="post-date">
+        Last updated: <%= data.updatedAt.toDateString() %>
+      </p>
+    <% } %>
+
+    <article class="post-body">
+      <%= data.body %>
+    </article>
+  </main>
+</div>

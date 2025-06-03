@@ -1,0 +1,39 @@
+<div class="login-container">
+  <main class="main login">
+    <h1>Log In</h1>
+
+    <% if (typeof error !=='undefined' ) { %> <!-- present error if details are invalid -->
+      <p class="text-red-500">
+        <%= error %>
+      </p>
+      <% } %>
+
+        <form action="/admin" method="POST">
+
+          <label for="username">Username</label>
+          <input type="text" placeholder="Enter Username" name="username">
+
+          <label for="username">Password</label>
+          <input type="password" placeholder="Enter Password" name="password">
+
+          <input type="submit" value="Login" class="btn">
+
+        </form>
+        <img src="https://i.postimg.cc/0QsGXFPp/divider3.gif" alt="starshine-shushing">
+  </main>
+</div>
+
+<!-- Registering Users -->
+<!-- <h3>Register</h3>
+
+<form action="/register" method="POST">
+
+  <label for="username">Username</label>
+  <input type="text" placeholder="Enter Username" name="username">
+
+  <label for="username">Password</label>
+  <input type="password" placeholder="Enter Password" name="password">
+
+  <input type="submit" value="Register" class="btn">
+
+</form> -->

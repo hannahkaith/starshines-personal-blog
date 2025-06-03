@@ -1,0 +1,28 @@
+<div class="search-container">
+  <main class="main search">
+    <div class="author">
+      <h1 class="author__heading">Search Results</h1>
+    </div>
+
+    <section class="articles">
+      <ul class="article-ul">
+
+        <!-- passing the data -->
+        <% data.forEach(blogPost=> { %>
+
+          <li>
+            <a href="/post/<%= blogPost._id %>"> <!-- going to page along with the unique ID number  -->
+              <span>
+                <%= blogPost.title %>
+              </span> <!-- title of post -->
+              <span class="article-list__date">
+                <%= blogPost.createdAt.toDateString() %>
+              </span> <!-- Date of when it was created -->
+            </a>
+          </li>
+          <% }) %>
+
+      </ul>
+    </section>
+  </main>
+</div>

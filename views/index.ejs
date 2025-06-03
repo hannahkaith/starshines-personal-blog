@@ -1,0 +1,37 @@
+<div class="author">
+  <h1 class="author__heading">WELCOME TO <br><span class="author__sub">Starshine's Blog</span></h1>
+  <p class="author__body">The personal blog of an online character!</p>
+</div>
+
+<img src="https://i.postimg.cc/66hXKLVB/cover-image.gif" alt="cover-photo" class="hero-image"
+  width="450" height="300">
+
+<!-- Section for Latest Entries -->
+<section class="articles">
+  <h2 class="article__heading">Latest Entries</h2>
+
+  <ul class="article-ul">
+
+    <!-- passing the data -->
+    <% data.forEach(blogPost=> { %>
+
+      <li>
+        <a href="/post/<%= blogPost._id %>"> <!-- going to page along with the unique ID number  -->
+          <span>
+            <%= blogPost.title %> <!-- title of post -->
+          </span> 
+          <span class="article-list__date">
+            <%= blogPost.createdAt.toDateString() %> <!-- Date of when it was created -->
+          </span> 
+        </a>
+      </li>
+      <% }) %>
+
+  </ul>
+
+  <!-- If there's no next page > don't display pagination! -->
+  <% if (nextPage !==null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">Check out previous posts</a>
+    <% } %>
+
+</section>
